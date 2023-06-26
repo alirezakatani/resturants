@@ -8,10 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+
+
 namespace WindowsFormsApp1
 {
+
+
     public partial class Form1 : Form
     {
+
+        public Person manager;
         public Form1()
         {
             InitializeComponent();
@@ -78,6 +84,21 @@ namespace WindowsFormsApp1
                     {
                         reader.Read();
                         MessageBox.Show("welcome "+reader.GetString(1)+ " "+reader.GetString(2));
+                        
+                        manager = new Person();
+                        manager.name = reader.GetString(1);
+                        manager.family_name = reader.GetString(2);
+                        manager.phone_number = reader.GetString(3);
+                        manager.email_address = reader.GetString(4);
+                        manager.rest_name = reader.GetString(5);
+                        manager.account_number = reader.GetString(6);
+                        manager.username = reader.GetString(7);
+                        manager.password = reader.GetString(8);
+                        manager.is_admin = reader.GetBoolean(9);
+                        manager.job = reader.GetString(10);
+                        Form3 fr3 = new Form3(manager);
+                        fr3.Show(this);
+                        
                     }
 
                 }
