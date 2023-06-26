@@ -12,10 +12,12 @@ namespace WindowsFormsApp1
 {
     public partial class Form3 : Form
     {
+        Person pers;
         public Form3(Person person)
         {
             InitializeComponent();
             label1.Text = "به رستوران " + person.rest_name +"خوش امدید";
+            pers = person;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -36,6 +38,12 @@ namespace WindowsFormsApp1
         private void Form3_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form5 fr5 = new Form5(pers);
+            fr5.Show();
         }
     }
 }

@@ -63,6 +63,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Good_Food_Display___NCI_Visuals_Online {
+            get {
+                object obj = ResourceManager.GetObject("Good_Food_Display_-_NCI_Visuals_Online", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap home_page {
             get {
                 object obj = ResourceManager.GetObject("home page", resourceCulture);
@@ -106,6 +116,16 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap img5 {
             get {
                 object obj = ResourceManager.GetObject("img5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled {
+            get {
+                object obj = ResourceManager.GetObject("Untitled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
