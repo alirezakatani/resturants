@@ -58,6 +58,13 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || path == null)
+            {
+                MessageBox.Show("لطفا تمامی فیلد ها را کامل کنید");
+                return;
+
+            }
             String sql = "SELECT * FROM rest_manager.dbo.food where name='" +textBox1.Text + "' and meal='" + textBox2.Text + "' and rest_name='"+pers.rest_name+"'";
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = "DESKTOP-ECP70S8";

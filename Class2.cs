@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace WindowsFormsApp1
 {
@@ -15,7 +16,7 @@ namespace WindowsFormsApp1
         public SqlConnectionStringBuilder builder { get; set; }
         public SqlCommand command { get; set; }
         public SqlDataReader reader { get; set; }
-
+        public DataSet ds;
 
 
         public void setcon()
@@ -29,11 +30,29 @@ namespace WindowsFormsApp1
             connection.Open();
             command = new SqlCommand(sql, connection);
             reader = command.ExecuteReader();
+            
         }
 
         public void delcon()
         {
             connection.Close();
+        }
+
+
+        public DataSet setdata_adaptor()
+        {
+            builder = new SqlConnectionStringBuilder();
+            builder.DataSource = "DESKTOP-ECP70S8";
+            builder.UserID = "Sa";
+            builder.Password = "1080566783";
+            builder.InitialCatalog = "rest_manager";
+            connection = new SqlConnection(builder.ConnectionString); // Your Connection String here
+            var dataAdapter = new SqlDataAdapter(sql, connection);
+
+            var commandBuilder = new SqlCommandBuilder(dataAdapter);
+            ds = new DataSet();
+            dataAdapter.Fill(ds);
+            return ds;
         }
             
            

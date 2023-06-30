@@ -13,11 +13,14 @@ namespace WindowsFormsApp1
     public partial class Form3 : Form
     {
         Person pers;
+        Boolean status;
         public Form3(Person person)
         {
             InitializeComponent();
-            label1.Text = "به رستوران " + person.rest_name +"خوش امدید";
+           
+          
             pers = person;
+            status = false;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -27,7 +30,7 @@ namespace WindowsFormsApp1
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -50,6 +53,90 @@ namespace WindowsFormsApp1
         {
             Form6 fr6 = new Form6(pers);
             fr6.Show();
+        }
+
+        private void button8_MouseEnter(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+        }
+
+        private void button8_MouseLeave(object sender, EventArgs e)
+        {
+           panel2.Visible = false;
+        }
+
+        private void panel2_MouseEnter(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+
+        }
+
+        private void panel2_MouseLeave(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            status = false;
+        }
+
+        private void panel1_MouseEnter(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+        }
+
+        private void panel1_MouseLeave(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if(status==false)
+            {
+                panel2.Visible = true;
+                status = true;
+            }
+            else
+            {
+                panel2.Visible = false;
+                status = false;
+            }
+            
+        }
+
+        private void button8_MouseEnter_1(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            label3.Text = Convert.ToString( DateTime.Now);
+
+
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form7 fr7 = new Form7(pers);
+            fr7.Show();
+            
         }
     }
 }

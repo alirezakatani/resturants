@@ -69,6 +69,7 @@ namespace WindowsFormsApp1
             this.text_pass.Name = "text_pass";
             this.text_pass.Size = new System.Drawing.Size(143, 22);
             this.text_pass.TabIndex = 2;
+            this.text_pass.Text = "1080566783";
             // 
             // text_user
             // 
@@ -76,28 +77,32 @@ namespace WindowsFormsApp1
             this.text_user.Name = "text_user";
             this.text_user.Size = new System.Drawing.Size(143, 22);
             this.text_user.TabIndex = 3;
+            this.text_user.Text = "alireza";
             this.text_user.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button1.Location = new System.Drawing.Point(526, 70);
+            this.button1.ForeColor = System.Drawing.Color.Maroon;
+            this.button1.Location = new System.Drawing.Point(492, 70);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 37);
             this.button1.TabIndex = 4;
             this.button1.Text = "ورود";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button2.Location = new System.Drawing.Point(339, 70);
+            this.button2.Location = new System.Drawing.Point(363, 70);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 37);
             this.button2.TabIndex = 5;
             this.button2.Text = "ثب نام";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1

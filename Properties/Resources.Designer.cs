@@ -63,6 +63,26 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FileNiko_Wallpaper_Pack_03___17 {
+            get {
+                object obj = ResourceManager.GetObject("FileNiko Wallpaper Pack 03 - 17", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FileNiko_Wallpaper_Pack_03___21 {
+            get {
+                object obj = ResourceManager.GetObject("FileNiko Wallpaper Pack 03 - 21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FileNiko_Wallpaper_Pack_03___222 {
             get {
                 object obj = ResourceManager.GetObject("FileNiko Wallpaper Pack 03 - 222", resourceCulture);
@@ -73,9 +93,39 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FileNiko_Wallpaper_Pack_03___234 {
+            get {
+                object obj = ResourceManager.GetObject("FileNiko Wallpaper Pack 03 - 234", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FileNiko_Wallpaper_Pack_03___27 {
+            get {
+                object obj = ResourceManager.GetObject("FileNiko Wallpaper Pack 03 - 27", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FileNiko_Wallpaper_Pack_03___31 {
             get {
                 object obj = ResourceManager.GetObject("FileNiko Wallpaper Pack 03 - 31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FileNiko_Wallpaper_Pack_03___37 {
+            get {
+                object obj = ResourceManager.GetObject("FileNiko Wallpaper Pack 03 - 37", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +153,49 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FileNiko_Wallpaper_Pack_03___56 {
+            get {
+                object obj = ResourceManager.GetObject("FileNiko Wallpaper Pack 03 - 56", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FileNiko_Wallpaper_Pack_03___68 {
+            get {
+                object obj = ResourceManager.GetObject("FileNiko Wallpaper Pack 03 - 68", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FileNiko_Wallpaper_Pack_03___85 {
+            get {
+                object obj = ResourceManager.GetObject("FileNiko Wallpaper Pack 03 - 85", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FileNiko_Wallpaper_Pack_03___98 {
             get {
                 object obj = ResourceManager.GetObject("FileNiko Wallpaper Pack 03 - 98", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FileNiko_Wallpaper_Pack_03___99 {
+            get {
+                object obj = ResourceManager.GetObject("FileNiko Wallpaper Pack 03 - 99", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +226,56 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap home_page1 {
             get {
                 object obj = ResourceManager.GetObject("home page1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_app_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-app-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_app_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-app-501", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_customer_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-customer-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_login_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-login-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_login_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-login-501", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
