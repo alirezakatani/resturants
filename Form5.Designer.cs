@@ -29,9 +29,8 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -48,29 +47,12 @@ namespace WindowsFormsApp1
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button5 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(371, 449);
-            this.panel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.Untitled;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(350, 410);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
@@ -90,16 +72,27 @@ namespace WindowsFormsApp1
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(368, 0);
+            this.panel2.Location = new System.Drawing.Point(482, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(428, 449);
+            this.panel2.Size = new System.Drawing.Size(428, 471);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button5.Location = new System.Drawing.Point(277, 399);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(130, 37);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "حذف غذا";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button4.Location = new System.Drawing.Point(3, 385);
+            this.button4.Location = new System.Drawing.Point(3, 399);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(130, 37);
             this.button4.TabIndex = 16;
@@ -110,7 +103,7 @@ namespace WindowsFormsApp1
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button3.Location = new System.Drawing.Point(139, 385);
+            this.button3.Location = new System.Drawing.Point(139, 399);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(130, 37);
             this.button3.TabIndex = 15;
@@ -121,7 +114,7 @@ namespace WindowsFormsApp1
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button2.Location = new System.Drawing.Point(2, 313);
+            this.button2.Location = new System.Drawing.Point(3, 333);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(130, 37);
             this.button2.TabIndex = 14;
@@ -132,7 +125,7 @@ namespace WindowsFormsApp1
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button1.Location = new System.Drawing.Point(138, 313);
+            this.button1.Location = new System.Drawing.Point(139, 333);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 37);
             this.button1.TabIndex = 13;
@@ -181,7 +174,7 @@ namespace WindowsFormsApp1
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("MRT_Ramollah", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label7.Location = new System.Drawing.Point(265, 313);
+            this.label7.Location = new System.Drawing.Point(266, 333);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(142, 38);
             this.label7.TabIndex = 7;
@@ -241,31 +234,40 @@ namespace WindowsFormsApp1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // button5
+            // panel1
             // 
-            this.button5.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button5.Location = new System.Drawing.Point(277, 385);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(130, 37);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "حذف غذا";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.panel1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.FileNiko_Wallpaper_Pack_03___38;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(479, 496);
+            this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(467, 459);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(908, 471);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Form5";
             this.Text = "Form5";
             this.Load += new System.EventHandler(this.Form5_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,7 +275,6 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
@@ -292,5 +293,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

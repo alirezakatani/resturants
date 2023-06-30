@@ -31,6 +31,10 @@ namespace WindowsFormsApp1
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -49,10 +53,6 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,11 +91,50 @@ namespace WindowsFormsApp1
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(373, -1);
+            this.panel1.Location = new System.Drawing.Point(492, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(477, 597);
+            this.panel1.Size = new System.Drawing.Size(463, 595);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(33, 460);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(161, 22);
+            this.textBox9.TabIndex = 22;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("MRT_Ramollah", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label11.Location = new System.Drawing.Point(310, 452);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(101, 38);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "سمت-شغل";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button3.Location = new System.Drawing.Point(279, 526);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(103, 40);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "ثبت اطلاعات";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button2.Location = new System.Drawing.Point(105, 528);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 37);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "بازگشت";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox8
             // 
@@ -159,7 +198,7 @@ namespace WindowsFormsApp1
             this.label10.Font = new System.Drawing.Font("MRT_Ramollah", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label10.Location = new System.Drawing.Point(306, 399);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 38);
+            this.label10.Size = new System.Drawing.Size(85, 38);
             this.label10.TabIndex = 9;
             this.label10.Text = "رمز عبور";
             // 
@@ -243,59 +282,20 @@ namespace WindowsFormsApp1
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.images2;
+            this.panel2.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.FileNiko_Wallpaper_Pack_03___46;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(367, 596);
+            this.panel2.Size = new System.Drawing.Size(486, 595);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button2.Location = new System.Drawing.Point(90, 519);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 37);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "بازگشت";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button3.Location = new System.Drawing.Point(264, 517);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 40);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "ثبت اطلاعات";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(33, 460);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(161, 22);
-            this.textBox9.TabIndex = 22;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("MRT_Ramollah", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label11.Location = new System.Drawing.Point(310, 452);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(101, 38);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "سمت-شغل";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(848, 589);
+            this.ClientSize = new System.Drawing.Size(952, 595);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

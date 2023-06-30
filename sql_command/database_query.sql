@@ -2,17 +2,18 @@
 
 create table manager
 (
-id int primary key IDENTITY(1,1) ,
+id int IDENTITY(1,1) ,
 [name] nvarchar(30),
 [family_name] nvarchar(30),
 [phone_number] nvarchar(30),
 [email_address] nvarchar(30),
-[rest_name] nvarchar(30) unique,
+[rest_name] nvarchar(30) ,
 [account_number] nvarchar(30),
 [username] nvarchar(30) unique,
 [password] nvarchar(30),
 is_admin bit,
-[job] nvarchar(30)
+[job] nvarchar(30),
+primary key ([name],[family_name],[rest_name],[job])
 )
 
 
@@ -25,10 +26,29 @@ price int ,
 time_prepare int ,
 rest_name nvarchar(30),
 image_path nvarchar(100),
-FOREIGN KEY (rest_name) REFERENCES manager(rest_name),
- primary key ([name],meal)
+score int,
+primary key ([name],meal,rest_name)
 )
 
 
 
+create table employee
+(
+[name] nvarchar(20),
+family_name nvarchar(20),
+job nvarchar(20),
+salary int,
+phone_number nvarchar(20),
+app_access bit,
+image_path nvarchar(100),
+rest_name nvarchar(30),
+score int,
+[email_address] nvarchar(30),
+[account_number] nvarchar(30),
+[username] nvarchar(30) unique,
+[password] nvarchar(30),
+primary key ([name],family_name,rest_name)
 )
+
+
+drop table manager

@@ -19,5 +19,7 @@ namespace WindowsFormsApp1
         public string password { get; set; }
         public Boolean is_admin { get; set; }
         public string job { get; set; }
+        public int salary;
+        public string image_path;
     }
 }

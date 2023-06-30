@@ -37,9 +37,9 @@ namespace WindowsFormsApp1
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,6 +117,7 @@ namespace WindowsFormsApp1
             this.button2.TabIndex = 6;
             this.button2.Text = "مدیریت کارکنان";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -128,16 +129,6 @@ namespace WindowsFormsApp1
             this.button1.Text = "تعریف و ویرایش غذا";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.img5;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(1, 255);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(511, 341);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -161,6 +152,16 @@ namespace WindowsFormsApp1
             this.label2.Size = new System.Drawing.Size(444, 68);
             this.label2.TabIndex = 3;
             this.label2.Text = "با ارزوی روزی خوب برای شما";
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.FileNiko_Wallpaper_Pack_03___31;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(1, 253);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(511, 343);
+            this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Form3
             // 

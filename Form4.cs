@@ -45,5 +45,11 @@ namespace WindowsFormsApp1
             Form5 fr5 = new Form5(pers);
             fr5.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form6 fr6 = new Form6(pers);
+            fr6.Show();
+        }
     }
 }

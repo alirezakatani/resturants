@@ -104,6 +104,7 @@ namespace WindowsFormsApp1
                 }
             }
             connection.Close();
+            this.Hide();
 
         }
 

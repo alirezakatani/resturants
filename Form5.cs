@@ -15,6 +15,7 @@ namespace WindowsFormsApp1
     {
         Person pers;
         string path;
+        food fod;
 
         public Form5(Person person)
         {
@@ -57,7 +58,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            String sql = "SELECT * FROM rest_manager.dbo.food where name='" +textBox1.Text + "' and meal='" + textBox2.Text + "'";
+            String sql = "SELECT * FROM rest_manager.dbo.food where name='" +textBox1.Text + "' and meal='" + textBox2.Text + "' and rest_name='"+pers.rest_name+"'";
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = "DESKTOP-ECP70S8";
             builder.UserID = "Sa";
@@ -65,7 +66,7 @@ namespace WindowsFormsApp1
             builder.InitialCatalog = "rest_manager";
             SqlConnection connection = new SqlConnection(builder.ConnectionString);
 
-            food fod = new food();
+            fod = new food();
             fod.name = textBox1.Text;
             fod.meal = textBox2.Text;
             fod.kind = textBox3.Text;
@@ -83,7 +84,7 @@ namespace WindowsFormsApp1
                 {
                     if (!reader.HasRows)
                     {
-                        sql = "insert into rest_manager.dbo.food values('" + fod.name + "','" + fod.meal + "','" + fod.kind + "','" + fod.price + "','" + fod.time_prepare + "','" + fod.rest_name + "','" + fod.image_path + "')";
+                        sql = "insert into rest_manager.dbo.food values('" + fod.name + "','" + fod.meal + "','" + fod.kind + "','" + fod.price + "','" + fod.time_prepare + "','" + fod.rest_name + "','" + fod.image_path +"',0)";
                         
                         connection.Close();
                         connection.Open();
@@ -115,8 +116,9 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
+
             sqlcon con = new sqlcon();
-            con.sql=  "SELECT * FROM rest_manager.dbo.food where name='" + textBox1.Text + "' and meal='"+textBox2.Text+"'" ;
+            con.sql=  "SELECT * FROM rest_manager.dbo.food where name='" + textBox1.Text + "' and meal='"+textBox2.Text + "' and rest_name='" + pers.rest_name + "'"; ;
             con.setcon();
             if(con.reader.HasRows)
             {
@@ -129,11 +131,20 @@ namespace WindowsFormsApp1
                 Bitmap pic = new Bitmap(path);
                 pictureBox1.Image = pic;
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-
+                fod = new food();
+                fod.name = textBox1.Text;
+                fod.meal = textBox2.Text;
+                fod.kind = textBox3.Text;
+                fod.price = Convert.ToInt32(textBox4.Text);
+                fod.rest_name = pers.rest_name;
+                fod.image_path = path;
+                fod.time_prepare = Convert.ToInt32(textBox5.Text);
                 con.delcon();
             }
             else
             {
+
+                MessageBox.Show("غذای مورد نظر وجود ندارد", "عدم وجود غذا", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             
@@ -142,7 +153,7 @@ namespace WindowsFormsApp1
         private void button5_Click(object sender, EventArgs e)
         {
             sqlcon con = new sqlcon();
-            con.sql = "Delete FROM rest_manager.dbo.food where name='" + textBox1.Text + "' and meal='" + textBox2.Text + "'";
+            con.sql = "Delete FROM rest_manager.dbo.food where name='" + textBox1.Text + "' and meal='" + textBox2.Text + "' and rest_name='" + pers.rest_name + "'"; ;
             con.setcon();
             con.delcon();
         }
@@ -152,7 +163,7 @@ namespace WindowsFormsApp1
             if(path!=null)
             {
                 sqlcon con = new sqlcon();
-                con.sql = "update rest_manager.dbo.food set name='" + textBox1.Text + "',meal ='" + textBox2.Text + "',kind='" + textBox3.Text + "',price=" + textBox4.Text + ",time_prepare=" + textBox5.Text +",image_path='"+path+"' where name='" + textBox1.Text + "' and meal='" + textBox2.Text + "'";
+                con.sql = "update rest_manager.dbo.food set name='" + textBox1.Text + "',meal ='" + textBox2.Text + "',kind='" + textBox3.Text + "',price=" + textBox4.Text + ",time_prepare=" + textBox5.Text +",image_path='"+path+"' where name='" + fod.name + "' and meal='" + fod.meal  +"' and rest_name='" + fod.rest_name + "'";
                 con.setcon();
                 con.delcon();
 
@@ -160,7 +171,7 @@ namespace WindowsFormsApp1
             else
             {
                 sqlcon con = new sqlcon();
-                con.sql = "update rest_manager.dbo.food set name='" + textBox1.Text + "',meal ='" + textBox2.Text + "',kind='" + textBox3.Text + "',price=" + textBox4.Text + ",time_prepare=" + textBox5.Text + " where name='" + textBox1.Text + "' and meal='" + textBox2.Text + "'";
+                con.sql = "update rest_manager.dbo.food set name='" + textBox1.Text + "',meal ='" + textBox2.Text + "',kind='" + textBox3.Text + "',price=" + textBox4.Text + ",time_prepare=" + textBox5.Text + " where name='" + fod.name + "' and meal='" + fod.meal + "' and rest_name='"+fod.rest_name+"'";
                 con.setcon();
                 con.delcon();
 
