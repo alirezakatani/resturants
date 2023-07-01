@@ -24,8 +24,14 @@ namespace WindowsFormsApp1
             list_id = nlist.list_id;
             lis = nlist;
 
+            refresh();
+        }
+        public void refresh()
+        {
+
+
             sqlcon newsql = new sqlcon();
-            newsql.sql = "select food.name as food_name,food.meal as food_meal,food.kind as food_kind,food.price as food_price,food.time_prepare as food_time_prepare,list.* from food left join list_match on (food_name=food.name and food_meal=food.meal and food.rest_name=list_match.rest_name) left join list on(list_match.list_name=list.list_name and list_match.list_meal=list.list_meal)   where list.list_id=" + list_id+" and food.rest_name='"+pers.rest_name+"'";
+            newsql.sql = "select food.name as food_name,food.meal as food_meal,food.kind as food_kind,food.price as food_price,food.time_prepare as food_time_prepare,list.* from food left join list_match on (food_name=food.name and food_meal=food.meal and food.rest_name=list_match.rest_name) left join list on(list_match.list_name=list.list_name and list_match.list_meal=list.list_meal)   where list.list_id=" + list_id + " and food.rest_name='" + pers.rest_name + "'";
 
             newsql.setdata_adaptor();
 
@@ -63,9 +69,10 @@ namespace WindowsFormsApp1
 
             }
             sqlcon newsql = new sqlcon();
-            newsql.sql = "insert into list_match values('" + textBox1.Text + "','" + textBox2.Text + "','" +lis.list_name+"','"+lis.list_meal+"','"+pers.rest_name+"')" ;
+            newsql.sql = "insert into list_match values('" + textBox1.Text + "','" + textBox2.Text + "','" +lis.list_name+"','"+lis.list_meal+"','"+pers.rest_name+"','"+lis.getdate()+"')" ;
             newsql.setcon();
-            dataGridView1.Update();
+            refresh();
+
 
 
         }
@@ -74,7 +81,7 @@ namespace WindowsFormsApp1
         {
 
             sqlcon con = new sqlcon();
-            con.sql = "SELECT * FROM rest_manager.dbo.food where name='" + textBox1.Text + "' and meal='" + textBox2.Text + "' and rest_name='" + pers.rest_name + "'"; ;
+            con.sql = "SELECT * FROM rest_manager.dbo.food where name='" + textBox1.Text + "' and meal='" + textBox2.Text + "' and rest_name='" + pers.rest_name +"'"; ;
             con.setcon();
             if (con.reader.HasRows)
             {
@@ -103,6 +110,19 @@ namespace WindowsFormsApp1
                 MessageBox.Show("غذای مورد نظر وجود ندارد", "عدم وجود غذا", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            sqlcon newsql = new sqlcon();
+            newsql.sql = "delete from list_match where list_name='" +lis.list_name+"'and list_meal='"+lis.list_meal+"' and  food_name='"+fod.name+"' and food_meal='"+fod.meal+"' and rest_name='"+pers.rest_name+"' and list_date='"+lis.getdate()+"'" ;
+            newsql.setcon();
+            refresh();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
 
         }
     }

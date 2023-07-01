@@ -1,4 +1,4 @@
-
+﻿
 
 create table manager
 (
@@ -48,7 +48,8 @@ score int,
 [account_number] nvarchar(30),
 [username] nvarchar(30) unique,
 [password] nvarchar(30),
-primary key ([name],family_name,rest_name)
+primary key ([name],family_name,rest_name),
+foreign key (job) references rolej(role_name)
 )
 
 
@@ -57,9 +58,10 @@ create table list
 list_id int IDENTITY(1,1) ,
 list_name nvarchar(20),
 list_meal nvarchar(20),
-list_date date,
+list_date nvarchar(20),
 rest_name nvarchar(30),
-primary key([list_name],list_meal,rest_name)
+image_path  nvarchar(100),
+primary key([list_name],list_meal,rest_name,list_date)
 )
 
 
@@ -70,8 +72,20 @@ food_meal nvarchar(20) ,
 list_name nvarchar(20),
 list_meal nvarchar(20) ,
 rest_name nvarchar(30),
+list_date nvarchar(20),
 foreign key (food_name,food_meal,rest_name) references food([name],meal,rest_name),
-foreign key (food_name,list_meal,rest_name) references list([list_name],list_meal,rest_name)
+foreign key (list_name,list_meal,rest_name,list_date) references list([list_name],list_meal,rest_name,list_date)
+)
+
+
+
+
+Create table rolej
+(
+role_name nvarchar(20),
+role_salary int,
+role_time nvarchar(40),
+primary key(role_name)
 )
 
 
@@ -91,3 +105,29 @@ select * from list inner join list_food_match on(list_name=name and meal=list_me
 
 select * from food left join list_match on (food_name=food.name and food_meal=food.meal and food.rest_name=list_match.rest_name) left join list on(list_name=name and meal=list_meal)   where list.id=2 and food.rest_name='dscsdc'
 
+insert into list_match values('s','s','vf','fvdv','dscsdc')
+
+insert into list_match values('s','s','vf','fvdv','dscsdc')
+
+
+insert into rest_manager.dbo.list values('grtgdfvdfv','gregr',10/04/1402,'dscsdc','C:\\Users\\alireza\\Pictures\\Saved Pictures\\4.jpg')
+insert into rest_manager.dbo.list values('vgbhn','hnjm','1402/04/10','dscsdc','C:\\Users\\alireza\\Pictures\\Saved Pictures\\5.jpg')
+
+
+
+update list set list_name='ali',list_meal='dscsdc',list_date='1278/11/16',image_path='C:\\Users\\alireza\\Pictures\\Saved Pictures\\1.jpg'
+
+
+update list set list_name='dfv',list_meal='cds',list_date=1278/11/16,image_path='C:\\Users\\alireza\\Pictures\\Saved Pictures\\1.jpg' where list_name='cddsc' and list_meal='cds' and list_date='16/11/1278 12:00:00 ق.ظ' and rest_name='dscsdc'
+
+
+select * from list where list_id=3 and rest_name='dscsdc'
+
+
+
+
+SET LANGUAGE Italian;  SET LANGUAGE us_english;
+SET DATEFORMAT dmy;
+update list set list_name='vfcfdsddv',list_meal='cds',list_date=1278/11/16,image_path='C:\\Users\\alireza\\Pictures\\Saved Pictures\\4.jpg' where list_name='cddsc' and list_meal='cds' and list_date=1900-01-08 and rest_name='dscsdc'
+
+insert into rest_manager.dbo.list values('frefdvdfg','rtgrtg',10/04/1402,'dscsdc','C:\\Users\\alireza\\Pictures\\Saved Pictures\\1.jpg')

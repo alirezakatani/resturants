@@ -31,7 +31,10 @@ namespace WindowsFormsApp1
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -46,8 +49,11 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -63,6 +69,8 @@ namespace WindowsFormsApp1
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.textBox3);
             this.panel2.Controls.Add(this.button6);
@@ -83,28 +91,59 @@ namespace WindowsFormsApp1
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("MRT_Ramollah", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label2.Location = new System.Drawing.Point(476, 284);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 38);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "ای دی";
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button7.Location = new System.Drawing.Point(190, 215);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(147, 37);
+            this.button7.TabIndex = 35;
+            this.button7.Text = "حذف لیست";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.FileNiko_Wallpaper_Pack_03___85;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(461, 209);
             this.panel1.TabIndex = 34;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(461, 206);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(364, 291);
+            this.textBox3.Location = new System.Drawing.Point(316, 287);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(217, 28);
+            this.textBox3.Size = new System.Drawing.Size(145, 28);
             this.textBox3.TabIndex = 33;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button6.Location = new System.Drawing.Point(603, 289);
+            this.button6.Location = new System.Drawing.Point(105, 281);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(185, 37);
             this.button6.TabIndex = 32;
@@ -115,17 +154,18 @@ namespace WindowsFormsApp1
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button5.Location = new System.Drawing.Point(8, 215);
+            this.button5.Location = new System.Drawing.Point(37, 212);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(147, 37);
             this.button5.TabIndex = 31;
             this.button5.Text = "ویرایش لیست";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button4.Location = new System.Drawing.Point(161, 215);
+            this.button4.Location = new System.Drawing.Point(553, 284);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(185, 37);
             this.button4.TabIndex = 30;
@@ -135,7 +175,7 @@ namespace WindowsFormsApp1
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(467, 126);
+            this.dateTimePicker1.Location = new System.Drawing.Point(467, 136);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 28;
@@ -150,6 +190,7 @@ namespace WindowsFormsApp1
             this.button2.TabIndex = 27;
             this.button2.Text = "ثبت لیست";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -160,17 +201,18 @@ namespace WindowsFormsApp1
             this.button1.TabIndex = 26;
             this.button1.Text = "انتخاب مسیر";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(467, 71);
+            this.textBox2.Location = new System.Drawing.Point(467, 81);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(200, 22);
             this.textBox2.TabIndex = 22;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(467, 14);
+            this.textBox1.Location = new System.Drawing.Point(467, 23);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(200, 22);
             this.textBox1.TabIndex = 21;
@@ -190,7 +232,7 @@ namespace WindowsFormsApp1
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MRT_Ramollah", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label4.Location = new System.Drawing.Point(723, 63);
+            this.label4.Location = new System.Drawing.Point(723, 73);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 38);
             this.label4.TabIndex = 18;
@@ -200,7 +242,7 @@ namespace WindowsFormsApp1
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MRT_Ramollah", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label3.Location = new System.Drawing.Point(733, 110);
+            this.label3.Location = new System.Drawing.Point(733, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 38);
             this.label3.TabIndex = 17;
@@ -210,7 +252,7 @@ namespace WindowsFormsApp1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MRT_Ramollah", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label1.Location = new System.Drawing.Point(691, 14);
+            this.label1.Location = new System.Drawing.Point(691, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 38);
             this.label1.TabIndex = 15;
@@ -226,6 +268,10 @@ namespace WindowsFormsApp1
             this.button3.Text = "حذف لیست";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -240,6 +286,8 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,5 +310,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

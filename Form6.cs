@@ -15,10 +15,25 @@ namespace WindowsFormsApp1
         Person pers;
         string path;
         Person newemp;
+        List<int> salary = new List<int>();
         public Form6(Person per)
         {
             InitializeComponent();
             pers = per;
+
+            sqlcon jobcon = new sqlcon();
+            jobcon.sql = "select role_name,role_salary from rolej where rest_name='"+pers.rest_name+"'";
+            jobcon.setcon();
+            
+
+            while (jobcon.reader.Read())
+            {
+                comboBox1.Items.Add(jobcon.reader.GetString(0));
+                salary.Add(jobcon.reader.GetInt32(1));
+
+
+            }
+            jobcon.delcon();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -50,6 +65,7 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
 
             if(path==null)
             {
@@ -59,12 +75,16 @@ namespace WindowsFormsApp1
             sqlcon con = new sqlcon();
             con.sql = "SELECT * FROM rest_manager.dbo.employee where name='" + textBox1.Text + "' and family_name='" + textBox2.Text + "' and rest_name='"+pers.rest_name+"'";
             con.setcon();
+
             if (!con.reader.HasRows)
             {
 
+
+
+
                 con.delcon();
                 sqlcon con3 = new sqlcon();
-                con3.sql = "insert into rest_manager.dbo.employee values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "'," + Convert.ToInt32(textBox4.Text) + ",'" + textBox5.Text + "'," + (checkBox1.Checked?1:0) + ",'" + path+"','"+pers.rest_name+"',5,'" +textBox6.Text+"','"+textBox7.Text+"','"+(checkBox1.Checked?textBox9.Text:"")+ "','" + (checkBox1.Checked ? textBox8.Text : "")+"')";
+                con3.sql = "insert into rest_manager.dbo.employee values('" + textBox1.Text + "','" + textBox2.Text + "','" + comboBox1.SelectedText + "'," + Convert.ToInt32(textBox4.Text) + ",'" + textBox5.Text + "'," + (checkBox1.Checked?1:0) + ",'" + path+"','"+pers.rest_name+"',5,'" +textBox6.Text+"','"+textBox7.Text+"','"+(checkBox1.Checked?textBox9.Text:"")+ "','" + (checkBox1.Checked ? textBox8.Text : "")+"')";
                 con3.setcon();
                 Console.Write("food created");
                 MessageBox.Show("کارمند مورد نظر ثبت شد", "ثبت کارمند", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -79,7 +99,7 @@ namespace WindowsFormsApp1
             if (checkBox1.Checked == true)
             {
                 sqlcon con2 = new sqlcon();
-                con2.sql = "insert into rest_manager.dbo.manager values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + pers.rest_name + "','" + textBox7.Text + "','" + textBox9.Text + "','" + textBox8.Text + "',1,'" + textBox3.Text + "')";
+                con2.sql = "insert into rest_manager.dbo.manager values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + pers.rest_name + "','" + textBox7.Text + "','" + textBox9.Text + "','" + textBox8.Text + "',1,'" + comboBox1.SelectedText + "')";
                 con2.setcon();
                 Console.Write("food created");
                 MessageBox.Show("کارمند مورد نظر به عنوان ادمین ثبت شد", "ثبت کارمند", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -98,7 +118,7 @@ namespace WindowsFormsApp1
             if (con.reader.HasRows)
             {
                 con.reader.Read();
-                textBox3.Text = con.reader.GetString(2);
+                comboBox1.SelectedText = con.reader.GetString(2);
                 textBox4.Text = Convert.ToString(con.reader.GetInt32(3));
                 textBox5.Text = con.reader.GetString(4);
                 textBox6.Text = con.reader.GetString(9);
@@ -117,7 +137,7 @@ namespace WindowsFormsApp1
                 newemp = new Person();
                 newemp.name = textBox1.Text;
                 newemp.family_name = textBox2.Text;
-                newemp.job = textBox3.Text;
+                newemp.job = comboBox1.SelectedText;
                 newemp.salary = Convert.ToInt32(textBox4.Text);
                 newemp.phone_number = textBox4.Text;
                 newemp.email_address = textBox5.Text;
@@ -139,9 +159,10 @@ namespace WindowsFormsApp1
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            
             newemp.name = textBox1.Text;
             newemp.family_name = textBox2.Text;
-            newemp.job = textBox3.Text;
+            newemp.job = comboBox1.SelectedText;
             newemp.salary = Convert.ToInt32(textBox4.Text);
             newemp.phone_number = textBox4.Text;
             newemp.email_address = textBox5.Text;
@@ -212,6 +233,11 @@ namespace WindowsFormsApp1
                 con2.delcon();
 
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox4.Text = Convert.ToString(salary[comboBox1.SelectedIndex]);
         }
     }
 }

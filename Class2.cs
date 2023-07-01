@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
@@ -17,6 +18,7 @@ namespace WindowsFormsApp1
         public SqlCommand command { get; set; }
         public SqlDataReader reader { get; set; }
         public DataSet ds;
+        public BindingSource bs;
 
 
         public void setcon()
@@ -52,6 +54,11 @@ namespace WindowsFormsApp1
             var commandBuilder = new SqlCommandBuilder(dataAdapter);
             ds = new DataSet();
             dataAdapter.Fill(ds);
+            bs = new BindingSource();
+            bs.DataSource = ds.Tables[0];
+            bs.ResetBindings(false);
+
+
             return ds;
         }
             

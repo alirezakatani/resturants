@@ -123,6 +123,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FileNiko_Wallpaper_Pack_03___32 {
+            get {
+                object obj = ResourceManager.GetObject("FileNiko Wallpaper Pack 03 - 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FileNiko_Wallpaper_Pack_03___37 {
             get {
                 object obj = ResourceManager.GetObject("FileNiko Wallpaper Pack 03 - 37", resourceCulture);

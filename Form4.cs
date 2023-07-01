@@ -138,5 +138,12 @@ namespace WindowsFormsApp1
             fr7.Show();
             
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form10 fr10 = new Form10(pers);
+            fr10.Show();
+
+        }
     }
 }
