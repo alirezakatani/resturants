@@ -49,7 +49,7 @@ score int,
 [username] nvarchar(30) unique,
 [password] nvarchar(30),
 primary key ([name],family_name,rest_name),
-foreign key (job) references rolej(role_name)
+foreign key (job,rest_name) references rolej(role_name,rest_name)
 )
 
 
@@ -85,7 +85,8 @@ Create table rolej
 role_name nvarchar(20),
 role_salary int,
 role_time nvarchar(40),
-primary key(role_name)
+rest_name nvarchar(30),
+primary key(role_name,rest_name)
 )
 
 
